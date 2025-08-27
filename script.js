@@ -7,8 +7,8 @@ if (signupForm) {
     e.preventDefault();
     const username = document.getElementById("signupUsername").value;
     const password = document.getElementById("signupPassword").value;
-
-    localStorage.setItem("sustainhubUser", JSON.stringify({ username, password }));
+    const email = document.getElementById("signupEmail").value;
+    localStorage.setItem("sustainhubUser", JSON.stringify({ username, password, email }));
     alert("Account created! Please log in.");
     window.location.href = "index.html";
   });
@@ -21,10 +21,11 @@ if (loginForm) {
     e.preventDefault();
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
+    const email = document.getElementById("loginEmail").value;
 
     const user = JSON.parse(localStorage.getItem("sustainhubUser"));
 
-    if (user && username === user.username && password === user.password) {
+    if (user && username === user.username && password === user.password && email === user.email) {
       localStorage.setItem("loggedIn", "true");
       alert("Login successful!");
       window.location.href = "indexB.html";

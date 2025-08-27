@@ -22,16 +22,21 @@
       max-width: 100%;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       border-radius: 10px;
-      overflow: hidden;
+      overflow: auto;
       display: flex;
+      flex-direction: row;
+      transition: all 0.3s;
     }
     .login-box {
       display: flex;
       width: 100%;
+      /* flex-direction: row; */
+      transition: all 0.3s;
     }
     .login-left, .login-right {
       flex: 1;
       padding: 40px;
+      min-width: 0;
     }
     /* Left (form) */
     .login-left {
@@ -53,18 +58,19 @@
       border-radius: 5px;
     }
     .btn {
-      width: 30%;
+      width: 60%;
+      max-width: 220px;
       padding: 15px;
       color: #fff;
       border: none;
       border-radius: 10px;
-      position: center;
       cursor: pointer;
-      margin-top: 40px;
+      margin-top: -10px;
       transition: 0.5s;
       border-color: transparent;
       background: linear-gradient(90deg, #33d69f, #3bb2f6);
       color: #08251c;
+      font-size: 1rem;
     }
     .btn:hover { background: linear-gradient(90deg, #3bb2f6, #33d69f); color: #ffffff;}
     .forgot {
@@ -95,17 +101,66 @@
       border: 2px solid white;
       border-radius: 15px;
       color: white;
-      width: 50%;
+      width: 60%;
+      max-width: 220px;
       text-decoration: none;
       transition: 0.5s;
+      font-size: 1rem;
     }
     .btn-outline:hover {
       background: #0f1620;
       border: 2px solid black;
     }
+
+    /* Responsive styles */
+    @media (max-width: 900px) {
+      .login-container, .login-box {
+        flex-direction: column-reverse;
+        height: auto;
+        min-height: 100vh;
+      }
+      .login-left, .login-right {
+        padding: 30px 10px;
+      }
+      .login-container {
+        width: 98vw;
+        min-width: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .login-container {
+        width: 100vw;
+        border-radius: 0;
+        display: block;
+        box-shadow: none;
+        min-width: 0;
+      }
+      .login-left, .login-right {
+        padding: 18px 2vw;
+      }
+      .icon img {
+        width: 30vw !important;
+        min-width: 60px;
+        max-width: 120px;
+      }
+      .btn, .btn-outline {
+        width: 90%;
+        font-size: 1em;
+        min-width: 0;
+      }
+      .input-group input {
+        width: 95%;
+        font-size: 1em;
+      }
+    }
+    @media (max-width: 768px) {
+  .login-box {
+    flex-direction: column-reverse !important; /* Reverse order when stacked */
+  }
+}
   </style>
 </head>
-<body>
+<body class="signup-page">
   <div class="login-container">
     <div class="login-box">
       <!-- Right: Sign Up Prompt -->
@@ -123,6 +178,9 @@
         <form id="signupForm" style="align-items: center; justify-content: center;">
           <div class="input-group">
             <input type="name" id="signupUsername" placeholder="Add Username" required>
+          </div>
+         <div class="input-group">
+            <input type="email" id="signupEmail" placeholder="Add Email" required>
           </div>
           <div class="input-group">
             <input type="password" id="signupPassword" placeholder="Add Password" required>

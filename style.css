@@ -75,3 +75,48 @@ main { padding: 80px 20px; }
   nav.nav a, nav.nav button { display:block; width:100%; text-align:left; padding:10px 12px }
   main { padding-top:160px }
 }
+
+/* Shared responsive for login/signup */
+@media (max-width: 900px) {
+  /* index.html: default column, signup.html: override to column-reverse */
+  .login-container, .login-box {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100vh;
+  }
+  body.signup-page .login-container, body.signup-page .login-box {
+    flex-direction: column-reverse !important;
+  }
+  .login-left, .login-right {
+    padding: 30px 10px !important;
+  }
+  .login-container {
+    width: 98vw !important;
+    min-width: 0 !important;
+  }
+}
+@media (max-width: 600px) {
+  .login-container {
+    width: 100vw !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-width: 0 !important;
+  }
+  .login-left, .login-right {
+    padding: 18px 2vw !important;
+  }
+  .icon img {
+    width: 30vw !important;
+    min-width: 60px !important;
+    max-width: 120px !important;
+  }
+  .btn, .btn-outline {
+    width: 90% !important;
+    font-size: 1em !important;
+    min-width: 0 !important;
+  }
+  .input-group input {
+    width: 95% !important;
+    font-size: 1em !important;
+  }
+}
