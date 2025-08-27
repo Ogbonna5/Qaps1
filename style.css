@@ -1,0 +1,77 @@
+/* === Shared Styling (Dark Mode, Auth Forms, etc.) === */
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  background: #111;
+  color: white;
+}
+
+/* Auth pages */
+.auth-container {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  margin: 100px auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+}
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  background: #2e7d32;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.auth-container button:hover {
+  background: #1b5e20;
+}
+.auth-container a { color: #4caf50; }
+
+/* Navbar */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #2e7d32;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav a .logout-btn {
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.logout-btn {
+  background: #e53935;
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background: #b71c1c;
+}
+main { padding: 80px 20px; }
+
+/* Responsive header adjustments */
+@media (max-width: 760px) {
+  header { align-items: flex-start; }
+  header .container { display:flex;flex-direction:column;gap:8px;align-items:stretch }
+  header .brand img { width:36px }
+  nav.nav { order: 2; width:100%; display:flex;flex-direction:column; gap:8px }
+  nav.nav a, nav.nav button { display:block; width:100%; text-align:left; padding:10px 12px }
+  main { padding-top:160px }
+}

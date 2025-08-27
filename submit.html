@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoPulse – Sustainability • Green Energy • Water</title>
+  <meta name="description" content="A frontend-only community for sustainability, green energy, and water conservation. Post ideas, comment, and sponsor — all saved in your browser.">
+  <link rel="stylesheet" href="mainstyle.css">
+</head>
+<body>
+  <!-- ===== Topbar ===== -->
+  <header class="topbar">
+    <div class="container">
+      <div class="brand"><span class="log3" aria-hidden="true"></span><span><img src="EcoPulse Logo Design.png" style="width: 10%;">EcoPulse</span></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="indexB.html">Updates</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="submit.html">Submit</a>
+        <a href="about.html">About</a>
+      </nav>
+      <nav class="nav">
+        <button onclick="logout()" class="logout-btn theme-toggle" style="background-color: transparent; color: white;"><a href="index.html" style="background-color: transparent;">Logout</a></button>
+      </nav>
+        
+    </div>
+  </header>
+
+  <main>
+    </section>
+
+    <!-- ===== Submit Idea ===== -->
+    <section id="submit">
+      <div class="container grid cols-2">
+        <div class="card pad">
+          <h2>✍️ Submit Your Idea</h2>
+          <form id="ideaForm" class="stack">
+            <div class="field">
+              <label for="author">Your name</label>
+              <input id="author" type="text" placeholder="e.g., Ada" required>
+            </div>
+            <div class="field">
+              <label for="country">Country</label>
+              <input id="country" type="text" list="countries" placeholder="e.g., Nigeria">
+              <datalist id="countries">
+                <option>Nigeria</option><option>Kenya</option><option>Ghana</option><option>India</option><option>USA</option><option>Canada</option><option>Spain</option><option>Mexico</option>
+              </datalist>
+            </div>
+            <div class="field">
+              <label for="title">Title</label>
+              <input id="title" type="text" placeholder="Solar-powered borehole for rural community" required>
+            </div>
+            <div class="field">
+              <label for="summary">Short summary</label>
+              <input id="summary" type="text" placeholder="One sentence that captures your idea" required>
+            </div>
+            <div class="field">
+              <label for="content">Details</label>
+              <textarea id="content" placeholder="Describe the problem, your solution, costs, and impact…" required></textarea>
+            </div>
+            <div class="field">
+              <label for="tags">Tags (comma-separated)</label>
+              <input id="tags" type="text" placeholder="water, energy, community">
+            </div>
+            <button class="btn brand" type="submit">Publish Idea</button>
+          </form>
+        </div>
+        <div class="card pad">
+          <h3>Submission Tips</h3>
+          <ul class="muted">
+            <li>Be specific: what, where, who benefits, and how you’ll measure impact.</li>
+            <li>Add estimated costs and a timeline if possible.</li>
+            <li>Use 2–5 tags so others can find your idea easily.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container row" style="justify-content:space-between">
+      <div class="row" style="margin-top:8px">
+        <button id="exportBtn" class="btn">⤴️ Export Data</button>
+        <label class="btn" aria-label="Import JSON">
+          ⤵️ Import Data
+          <input type="file" id="importFile" accept="application/json" hidden>
+        </label>
+        <button id="resetBtn" class="btn danger">🗑️ Reset (Local)</button>
+      </div>
+      <span>© <span id="year"></span> EcoPulse</span>
+      <span class="muted">Phone No. : 07013983338</span>
+    </div>
+  </footer>
+
+  <!-- ===== Idea Modal ===== -->
+  <dialog id="ideaDialog">
+    <div class="modal">
+      <div class="hd">
+        <strong id="dlgTitle">Idea</strong>
+        <button class="btn" id="dlgClose">✖</button>
+      </div>
+      <div class="bd stack" id="dlgBody"></div>
+    </div>
+  </dialog>
+
+  <script src="mainscript.js"></script>
+</body>
+</html>

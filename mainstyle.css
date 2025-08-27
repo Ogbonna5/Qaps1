@@ -1,0 +1,117 @@
+    :root{
+      --bg: #0c1116;        /* dark base */
+      --card: #0f1620;      /* card */
+      --muted: #9fb0c0;
+      --text: #eaf2f8;
+      --brand: #33d69f;     /* emerald */
+      --brand-2: #3bb2f6;   /* sky */
+      --accent: #ffd166;    /* warm */
+      --danger: #ff6b6b;
+      --ring: rgba(59, 178, 246, .45);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --muted: #4b5563;
+      --text: #0b1220;
+      --ring: rgba(51, 214, 159, .35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#0b141c 60%, var(--bg));color:var(--text);font:14px/1.5 Georgia, 'Times New Roman', Times, serif}
+    a{color:inherit}
+
+    /* ====== Layout ====== */
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .stack{display:grid;gap:16px}
+
+    /* ====== Topbar ====== */
+    .topbar{position:fixed;inset:0 0 auto 0;backdrop-filter: blur(10px);background:color-mix(in oklab, var(--bg) 70%, transparent);border-bottom:1px solid #1f2a36;z-index:20}
+    .topbar .container{display:flex;align-items:center;gap:12px;padding:12px 16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .logo{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;background: conic-gradient(from 180deg at 50% 50%, var(--brand), var(--brand-2), var(--accent), var(--brand)); box-shadow: var(--shadow)}
+    .nav{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap}
+    .nav a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--text);opacity:.9}
+    .nav a:hover{background:#1a2430}
+    .theme-toggle{margin-left:8px;border:1px solid #223040;background:#12202e;color:var(--text);padding:7px 10px;border-radius:10px;cursor:pointer}
+
+    /* ====== Sections ====== */
+    main{padding-top:78px}
+    section{padding:28px 0}
+    .hero{padding:42px 0}
+    .hero .wrap{display:grid;gap:14px}
+    .title{font-size:28px;line-height:1.2;margin:0}
+    .subtitle{color:var(--muted);max-width:65ch}
+
+    /* ====== Cards & utilities ====== */
+    .grid{display:grid;gap:16px}
+    @media (min-width: 760px){.grid.cols-2{grid-template-columns: 1fr 1fr}.grid.cols-3{grid-template-columns: repeat(3,1fr)}}
+    .card{background:linear-gradient(180deg,var(--card), #0b1620); border:1px solid #1f2a36; border-radius:16px; box-shadow: var(--shadow)}
+    .card.pad{padding:16px}
+    .muted{color:var(--muted)}
+    .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid #233346;padding:6px 10px;border-radius:20px;color:var(--muted);background:#0d1a25}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid #223040;background:#132433;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;text-decoration:none}
+    .btn:hover{background:#183042}
+    .btn.brand{border-color:transparent;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#08251c}
+    .btn.danger{background:#2a1114;border-color:#3a1b20;color:#ffd1d6}
+
+    /* ====== Forms ====== */
+    .field{display:grid;gap:6px}
+    label{font-weight:600}
+    input[type="text"], input[type="search"], textarea, select, input[type="number"]{width:100%;padding:10px 12px;border:1px solid #243547;border-radius:10px;background:#0d1a25;color:var(--text);outline:none}
+    input:focus, textarea:focus, select:focus{box-shadow:0 0 0 3px var(--ring)}
+    textarea{min-height:120px;resize:vertical}
+
+    /* ====== Idea cards ====== */
+    .idea{display:grid;gap:10px}
+    .idea .top{display:flex;gap:10px;align-items:center}
+    .avatar{width:40px;height:40px;border-radius:50%;border:1px solid #203040;object-fit:cover}
+    .idea .meta{color:var(--muted);font-size:12px}
+    .tags{display:flex;gap:6px;flex-wrap:wrap}
+    .idea .actions{display:flex;gap:8px;flex-wrap:wrap}
+
+    /* ====== Modal ====== */
+    dialog{border:none;border-radius:16px;padding:0;background:transparent}
+    .modal{width:min(720px, 92vw);background:linear-gradient(180deg,var(--card), #0b1620);border:1px solid #1f2a36;border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+    .modal .hd{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #1f2a36}
+    .modal .bd{padding:16px}
+
+    /* ====== Animations ====== */
+    @media (prefers-reduced-motion: no-preference){
+      .pop{transform: translateY(6px);opacity:0;animation: rise .5s ease forwards}
+      @keyframes rise{to{transform:none;opacity:1}}
+      .fade{opacity:0;animation:fadein .6s ease forwards}
+      @keyframes fadein{to{opacity:1}}
+      .btn{transition: transform .15s ease}
+      .btn:active{transform: translateY(1px)}
+    }
+
+    /* ====== Footer ====== */
+    footer{padding:24px 0;border-top:1px solid #1f2a36;color:var(--muted);}
+    
+    /* ====== Responsive Navbar (hamburger) ====== */
+    .hamburger{display:none;border:none;background:transparent;color:var(--text);font-size:24px;padding:8px;border-radius:8px;cursor:pointer}
+    @media (max-width: 760px) {
+      /* show brand + hamburger on one line */
+      .topbar .container{flex-direction:row;align-items:center;padding:10px 12px;gap:8px}
+      .topbar .container .brand{width:auto;justify-content:flex-start}
+      .topbar .container .brand img{width:36px;height:auto}
+      .hamburger{display:block;margin-left:auto}
+
+      /* hide nav by default on small screens; body.nav-open will show it */
+      .nav{width:100%;display:none;flex-direction:column;gap:8px;margin:8px 0 0 0}
+      .nav a, .nav button, .nav .logout-btn, .nav .theme-toggle{display:block;width:100%;text-align:left;padding:10px 12px;border-radius:10px}
+      .nav .logout-btn a{color:inherit;text-decoration:none}
+
+      /* when body has .nav-open, reveal the stacked menu and add padding so content isn't hidden */
+      body.nav-open .nav{display:flex}
+      body.nav-open main{padding-top:160px}
+    }
+
+    @media (max-width:420px){
+      .title{font-size:22px}
+      .subtitle{max-width:45ch}
+      body.nav-open main{padding-top:180px}
+    }

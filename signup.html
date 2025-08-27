@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - SustainHub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* === CSS embedded === */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Georgia, 'Times New Roman', Times, serif;}
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background: #0c1116;
+      display: flex;
+      color: #ffffff;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      width: 1200px;
+      height: 80vh;
+      max-width: 100%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+    }
+    .login-box {
+      display: flex;
+      width: 100%;
+    }
+    .login-left, .login-right {
+      flex: 1;
+      padding: 40px;
+    }
+    /* Left (form) */
+    .login-left {
+      background: #0f1620;
+    }
+    .login-left h2 { margin-bottom: 10px; }
+    .login-left p { color: #555; margin-bottom: 20px; }
+    .icon {
+      font-size: 40px;
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+    .input-group { margin: 30px 0; text-align: center;}
+    .input-group input {
+      width: 80%;
+      padding: 15px;
+      font-size: 15px;
+      border: 3px solid #ddd;
+      border-radius: 5px;
+    }
+    .btn {
+      width: 30%;
+      padding: 15px;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      position: center;
+      cursor: pointer;
+      margin-top: 40px;
+      transition: 0.5s;
+      border-color: transparent;
+      background: linear-gradient(90deg, #33d69f, #3bb2f6);
+      color: #08251c;
+    }
+    .btn:hover { background: linear-gradient(90deg, #3bb2f6, #33d69f); color: #ffffff;}
+    .forgot {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #3bb2f6;
+      text-decoration: none;
+    }
+    /* Right (sign up prompt) */
+    .login-right {
+      background: linear-gradient(135deg, #2e7d32, #0288d1);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-right h2 { margin-bottom: 10px; }
+    .login-right p { margin-bottom: 20px; }
+    .user-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+    .btn-outline {
+      padding: 10px 20px;
+      border: 2px solid white;
+      border-radius: 15px;
+      color: white;
+      width: 50%;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+    .btn-outline:hover {
+      background: #0f1620;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <!-- Right: Sign Up Prompt -->
+      <div class="login-right">
+        <div class="user-icon">👤</div>
+        <h2>Already have an Account?</h2>
+        <p>Continue your journey exploring the World at convienence. Join us, the next generation of innovators in transforming World with sustainability and information.</p>
+        <a href="index.html" class="btn-outline">Log In</a>
+      </div>
+      <!-- Left: Login Form -->
+      <div class="login-left" style="justify-content: center; align-items: center; text-align: center;">
+        <div class="icon"><img src="EcoPulse Logo Design.png" style="width: 10%;"></div>
+        <h2>Get Started</h2>
+        <p>Create an Account now</p>
+        <form id="signupForm" style="align-items: center; justify-content: center;">
+          <div class="input-group">
+            <input type="name" id="signupUsername" placeholder="Add Username" required>
+          </div>
+          <div class="input-group">
+            <input type="password" id="signupPassword" placeholder="Add Password" required>
+          </div>
+          <div><button type="submit" class="btn">Sign Up</button></div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <!-- <script>
+    // === JS embedded ===
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+
+        const user = JSON.parse(localStorage.getItem("sustainhubUser"));
+
+        if (user && email === user.email && password === user.password) {
+          localStorage.setItem("loggedIn", "true");
+          alert("Login successful!");
+          window.location.href = "index.html"; // redirect to main site
+        } else {
+          alert("Invalid email or password!");
+        }
+      });
+    }
+  </script> -->
+</body>
+</html>
+

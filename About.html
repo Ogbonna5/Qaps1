@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoPulse – Sustainability • Green Energy • Water</title>
+  <meta name="description" content="A frontend-only community for sustainability, green energy, and water conservation. Post ideas, comment, and sponsor — all saved in your browser.">
+  <link rel="stylesheet" href="mainstyle.css">
+</head>
+<body>
+  <!-- ===== Topbar ===== -->
+  <header class="topbar">
+    <div class="container">
+      <div class="brand"><span class="log3" aria-hidden="true"></span><span><img src="EcoPulse Logo Design.png" style="width: 10%;">EcoPulse</span></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="indexB.html">Updates</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="submit.html">Submit</a>
+        <a href="about.html">About</a>
+      </nav>
+      <nav class="nav">
+        <button onclick="logout()" class="logout-btn theme-toggle" style="background-color: transparent; color: white;"><a href="index.html" style="background-color: transparent;">Logout</a></button>
+      </nav>
+        
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== About ===== -->
+    <section id="about">
+      <div class="container card pad">
+        <h2>About EcoPluse</h2>
+        <p class="muted">This is a project made by a group five student in a challenge (QAPS) to help make the world sustainable and innovative. Data is stored in <strong>localStorage</strong>. In the app you would add authentication, databases, and payment providers (e.g., Stripe) for sponsorships. 
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex similique alias. Perspiciatis molestias deleniti sapiente earum explicabo! Possimus aspernatur perferendis quibusdam nihil, fuga quod perspiciatis quo animi exercitationem, ullam accusantium corrupti. Facere placeat architecto vitae hic ipsa laborum eius, quidem reiciendis aut, ullam odit et omnis suscipit laboriosam debitis doloribus. Cupiditate unde voluptatibus alias temporibus dicta vitae, voluptas velit! Repellendus cumque numquam eius officia, commodi odit necessitatibus a dolores nobis illo accusantium eos adipisci recusandae corporis iusto esse dolorem ratione accusamus quia eligendi fugiat quod pariatur? Facilis suscipit ad rem ab aliquam! Consequuntur adipisci, omnis sapiente exercitationem nesciunt iure a soluta iste, incidunt vero deserunt. Minima adipisci, soluta totam earum ipsa natus asperiores reprehenderit recusandae vitae similique perferendis neque at voluptate? Ipsa consequatur odit accusantium inventore animi nisi ut, provident error reiciendis nesciunt saepe ullam ipsum necessitatibus sint quo recusandae labore doloribus quasi veniam suscipit? Non exercitationem distinctio, eveniet voluptate mollitia fuga, iste aliquid tenetur nisi at aspernatur quia tempore! Officia maiores repellendus reiciendis excepturi iure sequi, quia, perspiciatis corrupti aliquam neque ipsam numquam obcaecati nihil commodi repudiandae iusto libero? At ipsam corrupti ex accusantium, optio assumenda iusto asperiores eaque cum odit voluptates veniam minus nulla alias nostrum quas!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer  style="margin-top: 50px;">
+    <div class="container row" style="justify-content:space-between">
+      <div class="row" style="margin-top:8px">
+        <button id="exportBtn" class="btn">⤴️ Export Data</button>
+        <label class="btn" aria-label="Import JSON">
+          ⤵️ Import Data
+          <input type="file" id="importFile" accept="application/json" hidden>
+        </label>
+        <button id="resetBtn" class="btn danger">🗑️ Reset (Local)</button>
+      </div>
+      <span>© <span id="year"></span> EcoPulse</span>
+      <span class="muted">Phone No. : 07013983338</span>
+    </div>
+  </footer>
+
+  <!-- ===== Idea Modal ===== -->
+  <dialog id="ideaDialog">
+    <div class="modal">
+      <div class="hd">
+        <strong id="dlgTitle">Idea</strong>
+        <button class="btn" id="dlgClose">✖</button>
+      </div>
+      <div class="bd stack" id="dlgBody"></div>
+    </div>
+  </dialog>
+
+  <script src="mainscript.js"></script>
+</body>
+</html>

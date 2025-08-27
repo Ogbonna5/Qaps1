@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoPulse – Sustainability • Green Energy • Water</title>
+  <meta name="description" content="A frontend-only community for sustainability, green energy, and water conservation. Post ideas, comment, and sponsor — all saved in your browser.">
+  <link rel="stylesheet" href="mainstyle.css">
+</head>
+<body>
+  <!-- ===== Topbar ===== -->
+  <header class="topbar">
+    <div class="container">
+      <div class="brand"><span class="log3" aria-hidden="true"></span><span><img src="EcoPulse Logo Design.png" style="width: 10%;">EcoPulse</span></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="indexB.html">Updates</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="submit.html">Submit</a>
+        <a href="about.html">About</a>
+      </nav>
+      <nav class="nav">
+        <button onclick="logout()" class="logout-btn theme-toggle" style="background-color: transparent; color: white;"><a href="index.html" style="background-color: transparent;">Logout</a></button>
+      </nav>
+        
+    </div>
+  </header>
+
+  <main>
+    
+    <!-- ===== Ideas & Filters ===== -->
+    <section id="ideas">
+      <div class="container stack">
+        <div class="row" style="justify-content:space-between;align-items:end">
+          <div class="stack" style="gap:6px">
+            <h2 class="fade">💡 Explore Ideas</h2>
+            <div class="row">
+              <input id="search" type="search" placeholder="Search title, content, tags…" style="min-width:260px">
+              <select id="countryFilter" aria-label="Country filter">
+                <option value="">All Countries</option>
+                <option>Nigeria</option>
+                <option>Kenya</option>
+                <option>Ghana</option>
+                <option>India</option>
+                <option>USA</option>
+                <option>Canada</option>
+                <option>Spain</option>
+                <option>Mexico</option>
+              </select>
+              <select id="tagFilter" aria-label="Tag filter">
+                <option value="">All Tags</option>
+                <option value="water">water</option>
+                <option value="energy">energy</option>
+                <option value="sustainability">sustainability</option>
+                <option value="air">air</option>
+                <option value="health">health</option>
+                <option value="education">education</option>
+                <option value="community">community</option>
+              </select>
+            </div>
+          </div>
+          <a class="btn" href="#submit">➕ New Idea</a>
+        </div>
+
+        <div id="ideaList" class="grid cols-3"></div>
+        <div id="emptyState" class="muted" style="display:none">No ideas match your filters.</div>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <footer style="margin-top: 185px;">
+    <div class="container row" style="justify-content:space-between">
+      <div class="row" style="margin-top:8px">
+        <button id="exportBtn" class="btn">⤴️ Export Data</button>
+        <label class="btn" aria-label="Import JSON">
+          ⤵️ Import Data
+          <input type="file" id="importFile" accept="application/json" hidden>
+        </label>
+        <button id="resetBtn" class="btn danger">🗑️ Reset (Local)</button>
+      </div>
+      <span>© <span id="year"></span> EcoPulse</span>
+      <span class="muted">Phone No. : 07013983338</span>
+    </div>
+  </footer>
+
+  <!-- ===== Idea Modal ===== -->
+  <dialog id="ideaDialog">
+    <div class="modal">
+      <div class="hd">
+        <strong id="dlgTitle">Idea</strong>
+        <button class="btn" id="dlgClose">✖</button>
+      </div>
+      <div class="bd stack" id="dlgBody"></div>
+    </div>
+  </dialog>
+
+  <script src="mainscript.js"></script>
+</body>
+</html>
